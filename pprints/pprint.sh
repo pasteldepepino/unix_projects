@@ -17,8 +17,10 @@ if [[ $wordc -ge 100 ]]; then
             mv ~/.pprint.sh ~/pprints
             echo 0 > ~/pprints/.counter.txt
             touch ~/pprints/.wordcounts.txt
+            echo -e '\a'
             break
         elif [[ $key == 'n' ]]; then
+            echo -e '\a'
             exit 0
         fi
     done
@@ -29,4 +31,6 @@ ps aux >> ~/pprints/file$filenumber
 
 nextnumber=$((filenumber + 1))
 echo $nextnumber > ~/pprints/.counter.txt
+echo action finished successfully 
+echo -e '\a'
 
